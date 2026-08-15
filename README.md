@@ -100,6 +100,11 @@ Planned improvements may include:
 - SEO optimization and metadata improvements
 - deployment setup for Netlify, Vercel, or hosting provider
 
+## Deploy
+```bash
+npm run deploy
+```
+
 ## License
 
 This project is for internal business use and can be extended as needed for client-facing deployment.

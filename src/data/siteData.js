@@ -30,10 +30,10 @@ export const capabilities = [
 ];
 
 export const workItems = [
-  { image: '/images/blue-machine.png.png', tag: 'Precision assembly', title: 'Industrial machine setup' },
-  { image: '/images/stamping-die-assembly.jpeg.jpeg', tag: 'Tooling', title: 'Stamping die assembly' },
-  { image: '/images/workstation.png.png', tag: 'Fabrication', title: 'Custom workstation unit' },
-  { image: '/images/metal-detector.png.png', tag: 'Process systems', title: 'Metal detection assembly' },
-  { image: '/images/conveyor.png.png', tag: 'Material handling', title: 'Conveyor driven solution' },
-  { image: '/images/yellow-machines.jpeg.jpeg', tag: 'Production line', title: 'Manufacturing floor' },
+  { image: '/images/blue-machine.png', tag: 'Precision assembly', title: 'Industrial machine setup' },
+  { image: '/images/stamping-die-assembly.jpeg', tag: 'Tooling', title: 'Stamping die assembly' },
+  { image: '/images/workstation.png', tag: 'Fabrication', title: 'Custom workstation unit' },
+  { image: '/images/metal-detector.png', tag: 'Process systems', title: 'Metal detection assembly' },
+  { image: '/images/conveyor.png', tag: 'Material handling', title: 'Conveyor driven solution' },
+  { image: '/images/yellow-machines.jpeg', tag: 'Production line', title: 'Manufacturing floor' },
 ];

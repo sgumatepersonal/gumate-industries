@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
   --primary: #0c3b5f;
   --primary-dark: #072e49;
   --primary-light: #eaf4fb;
   --accent: #f39c12;
-  --accent-soft: #fff3df;
   --text: #1a1d2a;
   --muted: #5d6475;
   --bg: #f7f9fc;
@@ -22,10 +23,14 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: var(--text);
   background: var(--white);
+}
+
+#root {
+  min-height: 100vh;
 }
 
 a {
@@ -333,64 +338,6 @@ img {
   color: var(--muted);
 }
 
-.table-wrap {
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 22px rgba(15, 31, 41, 0.03);
-}
-
-th,
-td {
-  padding: 1rem 1.2rem;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-}
-
-th {
-  background: var(--primary-light);
-  color: var(--primary-dark);
-  font-size: 0.84rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.metrics-wrap {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.8rem;
-}
-
-.metric-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: 1.5rem;
-}
-
-.metric-card h3 {
-  margin-top: 0;
-  color: var(--primary-dark);
-}
-
-.metric-card ul {
-  margin: 0;
-  padding-left: 1.2rem;
-  color: var(--muted);
-}
-
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -529,11 +476,8 @@ tbody tr:last-child td {
     grid-template-columns: 1fr;
   }
 
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .client-grid {
+  .cards-grid,
+  .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -545,8 +489,7 @@ tbody tr:last-child td {
 
   .stats,
   .cards-grid,
-  .metrics-wrap,
-  .client-grid {
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 

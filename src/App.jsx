@@ -1,234 +1,116 @@
-import SectionHeader from './components/SectionHeader';
-import { navigation, stats, capabilities, workItems } from './data/siteData';
-
 function App() {
   const currentYear = new Date().getFullYear();
 
+  const navItems = [
+    'Home',
+    'About Us',
+    'Products',
+    'Services',
+    'Certifications',
+    'Contact Us',
+  ];
+
+  const productCards = [
+    {
+      image: '/images/flat-machine.jpeg.jpeg',
+      title: 'Press Parts',
+      description: 'Manufactures of press parts, tools, dies, press and assembly components.',
+    },
+    {
+      image: '/images/stamping-die.png.png',
+      title: 'Custom Tools & Dies',
+      description: 'Custom tools & dies, design engineering, and reliable fabrication support.',
+    },
+    {
+      image: '/images/metal-detector.png.png',
+      title: 'Press Parts',
+      description: 'Custom tools & dies design, fabrication, and precision assembly solutions.',
+    },
+  ];
+
   return (
-    <>
-      <header className="site-header">
-        <div className="container nav-wrap">
+    <div className="page-shell">
+      <div className="site-shell">
+        <header className="topbar">
           <div className="brand" aria-label="Gumate Industries brand">
-            <div className="brand-mark">GI</div>
-            <div>
-              <span className="brand-name">Gumate Industries</span>
-              <small>Precision Sheet Metal &amp; Engineering</small>
+            <div className="brand-mark" aria-hidden="true">
+              <span>GI</span>
+            </div>
+            <div className="brand-text">
+              <span className="brand-title">GUMATE</span>
+              <span className="brand-subtitle">INDUSTRIES</span>
             </div>
           </div>
 
           <nav className="main-nav" aria-label="Main navigation">
-            {navigation.map((item) => (
-              <a href={`#${item.toLowerCase()}`} key={item}>
+            {navItems.map((item) => (
+              <a href="#" key={item}>
                 {item}
               </a>
             ))}
           </nav>
-        </div>
-      </header>
+        </header>
 
-      <main>
-        <section id="home" className="hero">
-          <div className="container hero-inner">
+        <main>
+          <section className="hero-banner" id="home">
             <div className="hero-copy">
-              <p className="eyebrow">Approved vendor manufacturing partner</p>
-              <h1>Reliable engineering solutions for sheet metal and welding assemblies.</h1>
-              <p className="lead">
-                Gumate Industries manufactures precision sheet metal components, press tools,
-                and custom engineering solutions for leading industrial and automotive clients.
-              </p>
+              <h1>
+                GUMATE INDUSTRIES:
+                <span>Your Trusted Manufacturing Partner</span>
+              </h1>
 
-              <div className="cta-row">
-                <a className="btn btn-primary" href="#contact">
-                  Request a quote
-                </a>
-                <a className="btn btn-secondary" href="#capabilities">
-                  Explore capabilities
-                </a>
-              </div>
-
-              <ul className="stats">
-                {stats.map((item) => (
-                  <li key={item.value}>
-                    <strong>{item.value}</strong>
-                    <span>{item.label}</span>
-                  </li>
-                ))}
+              <ul className="feature-list">
+                <li>Precision Press Parts</li>
+                <li>Custom Tools &amp; Dies</li>
+                <li>Expert Design Engineering</li>
+                <li>Efficient Assembly Solutions</li>
               </ul>
             </div>
 
-            <div className="hero-panel" aria-label="Company overview card">
-              <div className="panel-box">
-                <span className="label">Company profile</span>
-                <h2>M/S GUMATE INDUSTRIES</h2>
-                <ul>
-                  <li>
-                    <strong>Regd. Office / Mfg. Unit:</strong> Plot No. 1, Gatha Mandir Bypass Road,
-                    Rasai Industrial Estate, Dehu, Pune 412109
-                  </li>
-                  <li>
-                    <strong>Contact:</strong> +91 7387241112
-                  </li>
-                  <li>
-                    <strong>Email:</strong> gumateindustries@gmail.com
-                  </li>
-                  <li>
-                    <strong>GSTIN:</strong> 27AQGPG9141C1Z2
-                  </li>
-                  <li>
-                    <strong>PAN:</strong> AQGPG9141C
-                  </li>
-                </ul>
-              </div>
+            <div className="hero-media" aria-label="Manufacturing floor image">
+              <div className="iso-badge">ISO-9001:2015</div>
+              <img src="/images/workstation.png.png" alt="Manufacturing workshop" />
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section id="about" className="section light-section">
-          <SectionHeader eyebrow="About us" title="Built on quality, trust, and engineering discipline." />
+          <section className="products-section" id="products">
+            <h2>Featured Products</h2>
 
-          <div className="container about-grid">
-            <div>
-              <p>
-                We are a quality-driven manufacturer of sheet metal components and welding
-                assemblies, supplying directly and indirectly to well-known automobile and industrial
-                clients.
-              </p>
-              <p>
-                Our mission is to establish a strong identity in the sheet metal industry as a trusted
-                service provider committed to high quality, on-time delivery, and cost-effective
-                engineering solutions.
-              </p>
+            <div className="product-grid">
+              {productCards.map((card, index) => (
+                <article className="product-card" key={`${card.title}-${index}`}>
+                  <div className="product-image-wrap">
+                    <img src={card.image} alt={card.title} />
+                  </div>
+                  <div className="product-copy">
+                    <h3>{card.title}</h3>
+                    <p>{card.description}</p>
+                  </div>
+                </article>
+              ))}
             </div>
+          </section>
+        </main>
 
-            <div className="value-boxes">
-              <div className="value-item">
-                <span>Integrity</span>
-                <p>Flexible processes and trust-based relationships with every client.</p>
-              </div>
-              <div className="value-item">
-                <span>Accuracy</span>
-                <p>Balanced speed with 100% accuracy and disciplined quality control.</p>
-              </div>
-              <div className="value-item">
-                <span>Leadership</span>
-                <p>Diverse talent, motivated teams, and continuous improvement culture.</p>
-              </div>
-            </div>
+        <footer className="site-footer">
+          <div className="footer-contact">
+            <p>
+              Sagar S. Gumate | Mob : 7387241112
+              <br />
+              Plot No.1, Gatha Mandir By-Pass Road, Rasai Industrial Estate, Vitthal Nagar, Dehu,
+              Pune - 412109
+              <br />
+              E-mail : gumateindustries@gmail.com
+            </p>
           </div>
-        </section>
 
-        <section id="capabilities" className="section">
-          <SectionHeader
-            eyebrow="Capabilities"
-            title="Engineering capabilities designed for precision manufacturing."
-          />
-
-          <div className="container cards-grid">
-            {capabilities.map((item) => (
-              <article key={item.title} className="info-card">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
+          <div className="footer-brand" aria-label="Gumate Industries logo mark">
+            <div className="footer-brand-mark">GI</div>
+            <p>GSTIN No : 27AQGPG9141C1Z2</p>
           </div>
-        </section>
-
-        <section id="work" className="section light-section">
-          <SectionHeader eyebrow="Our work" title="Earlier work and manufacturing execution." dark />
-
-          <div className="container gallery-grid">
-            {workItems.map((item) => (
-              <article key={item.title} className="work-card">
-                <img src={item.image} alt={item.title} />
-                <div className="work-card-copy">
-                  <span>{item.tag}</span>
-                  <h3>{item.title}</h3>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section callout">
-          <div className="container callout-inner">
-            <div>
-              <p className="eyebrow dark">Our promise</p>
-              <h2>Committed to 100% client satisfaction.</h2>
-            </div>
-            <a className="btn btn-primary" href="#contact">
-              Get in touch
-            </a>
-          </div>
-        </section>
-
-        <section id="contact" className="section contact-section">
-          <div className="container contact-grid">
-            <div className="contact-copy">
-              <p className="eyebrow">Contact</p>
-              <h2>Let’s build a dependable manufacturing partnership.</h2>
-              <p>
-                We are ready to support your business with quality-focused manufacturing, dependable
-                delivery, and flexible engineering support for custom industrial needs.
-              </p>
-
-              <div className="contact-detail">
-                <strong>Registered Address</strong>
-                <p>
-                  Plot No. 1, Gatha Mandir Bypass Road, Rasai Industrial Estate, Vitthal Nagar, Dehu,
-                  Pune 412109
-                </p>
-              </div>
-              <div className="contact-detail">
-                <strong>Contact Person</strong>
-                <p>Sagar Gumate</p>
-                <p>Cell No. +91 7387241112</p>
-              </div>
-              <div className="contact-detail">
-                <strong>Email</strong>
-                <p>gumateindustries@gmail.com</p>
-              </div>
-            </div>
-
-            <div className="contact-card">
-              <h3>Quick company details</h3>
-              <ul>
-                <li>
-                  <span>Status:</span> Small Scale
-                </li>
-                <li>
-                  <span>Area:</span> 2500 Sq.ft.
-                </li>
-                <li>
-                  <span>Shop Act Registration:</span> Chinchwad, dated 25/06/2013
-                </li>
-                <li>
-                  <span>GSTIN:</span> 27AQGPG9141C1Z2
-                </li>
-                <li>
-                  <span>Udyog Aadhar:</span> 746500367346
-                </li>
-                <li>
-                  <span>Bank:</span> Canara Bank, Chikhali
-                </li>
-                <li>
-                  <span>Working Shift:</span> General
-                </li>
-                <li>
-                  <span>Weekly Off:</span> Thursday
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="site-footer">
-        <div className="container footer-wrap">
-          <p>© {currentYear} Gumate Industries. All rights reserved.</p>
-          <p>Precision Sheet Metal Components &amp; Welding Assemblies</p>
-        </div>
-      </footer>
-    </>
+        </footer>
+      </div>
+    </div>
   );
 }
 
